@@ -11,11 +11,10 @@ object Main {
         case "Q1_3_2" => Q1_3_2._main(args.tail)
         case "Q1_3_3" => Q1_3_3._main(args.tail)
         case "Q1_3_4" => Q1_3_4._main(args.tail)
-
         case "Q2_1"   => Q2_1._main(args.tail)
         case "Q2_2"   => Q2_2._main(args.tail)
         case "Q2_3"   => Q2_3._main(args.tail)
-
+        case "Q4"     => Q4._main(args.tail)
         case _        => throw new IllegalArgumentException("Invalid args(0)")
       }
     } else {
