@@ -47,6 +47,25 @@ object UMR {
     return dataHM
   }
 
+  /** Create Map(Tuple2(UserID, UserID) -> Rating)
+   * @param fpath file path
+   * @return Map(Tuple2(UserID, UserID) -> Rating)
+   */
+  def file2Map(fpath: String): mutable.Map[Tuple2[Int, Int], Int] = {
+    val br = new BufferedReader(
+        new InputStreamReader(new FileInputStream(fpath), "UTF-8"))
+    val result = mutable.Map.empty[Tuple2[Int, Int], Int]
+    try {
+      Iterator.continually(br.readLine()).takeWhile(_ != null).foreach { line =>
+        val datas = line.split("::")
+        result(Tuple2(datas(0).toInt-1, datas(1).toInt-1)) = datas(2).toInt
+      }
+    } finally {
+      br.close()
+    }
+    return result
+  }
+
   /** Create TreeMap (UserID -> (MovieID -> Rating))
    * @param dataL List[Tuple3(UserID, MovieID, Rating)]
    * @param tm empty TreeMap
