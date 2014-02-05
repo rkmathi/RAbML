@@ -22,10 +22,11 @@ object Q4 {
     var t       = 0
     val ETA     = 0.01d
 
-    val mseNoLambda   = getNoLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K)
-    println("No   lambda => " + mseNoLambda)
+    //val mseNoLambda   = getNoLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K)
+    //println("No   lambda => " + mseNoLambda)
     val mseWithLambda = getWithLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K, lambda)
-    println("With lambda => " + mseWithLambda)
+    //println("With lambda => " + mseWithLambda)
+    println(mseWithLambda)
   }
 
   def getNoLambda(
@@ -40,7 +41,7 @@ object Q4 {
     var mse         = 99.9d
     var testU2MSize = 0
 
-    while (math.abs(mseOld - mse) >= 0.01) {
+    while (math.abs(mseOld - mse) >= 0.001) {
       mseOld = mse
       sijMap.foreach { s =>
         val (i, j) = s._1

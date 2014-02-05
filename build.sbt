@@ -31,10 +31,10 @@ jarName in assembly <<= (name, version) map {
 
 mainClass in assembly := Some("Main")
 
-mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
-  {
-    case "application.conf" => MergeStrategy.concat
-    case x => old(x)
-  }
-}
+//mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+//  {
+//    case "application.conf" => MergeStrategy.concat
+//    case x => old(x)
+//  }
+//}
 
