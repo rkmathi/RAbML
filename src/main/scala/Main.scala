@@ -20,10 +20,17 @@ object Main {
     var vMatrix = getRandomMatrix(K, sMatrix(0).size)
     var t       = 0
 
-    //val mseNoLambda   = getNoLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K)
-    //println("No   lambda => " + mseNoLambda)
+    //
+    val start = System.nanoTime()
+    //
+
     val mseWithLambda = getWithLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K, lambda)
-    //println("With lambda => " + mseWithLambda)
+
+    //
+    println(System.nanoTime() - start)
+    //
+
+
     println(mseWithLambda)
   }
 
