@@ -4,11 +4,12 @@ import scala.collection.mutable
 
 object Main {
   def main(args: Array[String]): Unit = {
-    Util.argsCheck(args, 4)
+    Util.argsCheck(args, 5)
     val TRAIN_DAT = args(0)
     val TEST_DAT  = args(1)
     var lambda    = args(2).toDouble
     val K         = args(3).toInt
+    val ETA       = args(4).toDouble
 
     val testU2M = UMR.getU2M(UMR.file2List(TEST_DAT), TreeMap.empty[Int, TreeMap[Int, Int]])
 
@@ -18,7 +19,6 @@ object Main {
     var uMatrix = getRandomMatrix(K, sMatrix.size)
     var vMatrix = getRandomMatrix(K, sMatrix(0).size)
     var t       = 0
-    val ETA     = 0.01d
 
     //val mseNoLambda   = getNoLambda(sijMap, uMatrix, vMatrix, testU2M, ETA, K)
     //println("No   lambda => " + mseNoLambda)
