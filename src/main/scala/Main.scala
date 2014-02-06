@@ -39,7 +39,7 @@ object Main {
     var mse         = 99.9d
     var testU2MSize = 0
 
-    while (math.abs(mseOld - mse) >= 0.1) {
+    while (mse - mseOld >= 0) {
       mseOld = mse
       sijMap.foreach { s =>
         val (i, j) = s._1

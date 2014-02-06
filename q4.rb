@@ -10,10 +10,12 @@ ns    = ['2', '5', '10', '25', '50']
 users.each { |u|
   lambs.each { |l|
     ns.each { |n|
-      jar_path  = './target/scala-2.10/RAbML-0.0.1.jar'
+      jar_path  = './RAbML-0.0.1.jar'
       train_path= "./dat/#{u}User_train_ratings.dat"
       test_path = "./dat/#{u}User_test_ratings.dat"
+
       print "#{u}, #{l}, #{n} => "
+
       result = `java -jar #{jar_path} #{train_path} #{test_path} #{l} #{n}`
       print "#{result}\n"
     }
