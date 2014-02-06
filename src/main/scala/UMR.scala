@@ -1,5 +1,3 @@
-package net.rkmathi.rabml
-
 import java.io.{BufferedReader, FileInputStream, InputStreamReader}
 import scala.collection.immutable.TreeMap
 import scala.collection.mutable

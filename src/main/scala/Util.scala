@@ -1,5 +1,3 @@
-package net.rkmathi.rabml
-
 /**
  * Util => Utilities object
  */
